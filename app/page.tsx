@@ -266,10 +266,11 @@ export default function HomePage() {
                   { k: "ROLE",    v: "Chairman & CEO" },
                   { k: "COMPANY", v: "SECURE Tool Company" },
                   { k: "FOCUS",   v: "Company Vision, Partnerships" },
+                  { k: "LINKEDIN", v: <a href="https://www.linkedin.com/in/adam-paul-smolak-4b816312/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">linkedin.com/in/adam-paul-smolak</a> },
                 ].map(({ k, v }) => (
                   <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
                     <span className="text-zinc-600">{k}</span>
-                    <span className="text-zinc-300">{v}</span>
+                    <span className="text-zinc-300 text-right">{v}</span>
                   </div>
                 ))}
               </div>
@@ -294,18 +295,18 @@ export default function HomePage() {
                 Inventor and technical founder. Scott built the AnyMount Cargo Control System,
                 assembled the IoT infrastructure stack behind SECURE Blue and pioneers the
                 use of LoRaWAN networks for water management. He has a rare talent for turning 
-                real-world problems into 
-                scalable product lines.
+                client pains and real-world problems into scalable product lines.
               </p>
               <div className="space-y-2 font-mono text-xs">
                 {[
                   { k: "ROLE",    v: "COO" },
                   { k: "COMPANY", v: "SECURE Tool Company" },
                   { k: "FOCUS",   v: "Operations, Sales, Product Engineering" },
+                  { k: "LINKEDIN", v: <a href="https://www.linkedin.com/in/imscottholbrook/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">linkedin.com/in/imscottholbrook</a> },
                 ].map(({ k, v }) => (
                   <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
                     <span className="text-zinc-600">{k}</span>
-                    <span className="text-zinc-300">{v}</span>
+                    <span className="text-zinc-300 text-right">{v}</span>
                   </div>
                 ))}
               </div>
