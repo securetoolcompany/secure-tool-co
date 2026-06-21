@@ -1,26 +1,13 @@
-import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'SECURE Tool Company',
+  title: "SECURE Tool Company | Solving the World's Greatest Challenges",
   description:
-    'SECURE Tool Company is the parent company for SECURE Blue and SECURE Cargo Control. We solve the world\'s greatest challenges by delivering technical solutions to water security and supply chain Cargo Control.',
-  keywords:
-    'SECURE Tool Company, SECURE Blue, SECURE Cargo Control, water security, cargo tracking, IoT, industrial tools',
-  authors: [{ name: 'SECURE Tool Company' }],
-  openGraph: {
-    title: 'SECURE Tool Company',
-    description:
-      'Parent company of SECURE Blue and SECURE Cargo Control.',
-    images: [
-      {
-        url: '/hero.jpg',
-        width: 1920,
-        height: 1080,
-        alt: 'SECURE Tool Company',
-      },
-    ],
-  },
+    "SECURE Tool Company — parent of SECURE Blue and SECURE Cargo Control. Next-generation IoT tools and services solving the world's greatest challenges.",
 };
 
 export default function RootLayout({
@@ -29,8 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="dark scroll-smooth">
+      <body
+        className={`${inter.className} bg-[#0a0c10] text-zinc-400 selection:bg-blue-500/30`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,228 +1,332 @@
-import Image from 'next/image';
+"use client";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0a0f1c] to-[#111827]">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <main className="min-h-screen bg-[#0a0c10] text-zinc-300 font-mono">
+
+      {/* ── NAV ── */}
+      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0c10]/90 backdrop-blur-sm">
+        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14">
+          <span className="text-white text-sm font-bold tracking-[0.2em] uppercase">
+            SECURE TOOL CO.
+          </span>
+          <div className="flex items-center gap-6 text-xs tracking-widest text-zinc-500">
+            <a href="#companies" className="hover:text-zinc-200 transition-colors">COMPANIES</a>
+            <a href="#founders"  className="hover:text-zinc-200 transition-colors">FOUNDERS</a>
+            <a href="mailto:office@securetool.company" className="hover:text-zinc-200 transition-colors">CONTACT</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* ── HERO ── */}
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-14">
+        {/* Drop your hero image at /public/hero.jpg */}
         <div className="absolute inset-0 z-0">
-          <Image
+          <img
             src="/hero.jpg"
-            alt="Sun rising over Earth"
-            fill
-            className="object-cover opacity-40"
-            priority
+            alt="Sun rising over Earth from orbit"
+            className="w-full h-full object-cover opacity-40"
+            width={1920}
+            height={1080}
+            loading="eager"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1c]/80 via-[#0a0f1c]/60 to-[#0a0f1c]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0c10]/20 via-[#0a0c10]/50 to-[#0a0c10]" />
         </div>
-        <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight">
-            SECURE Tool Company
+
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-24">
+          <div className="flex items-center gap-3 mb-8">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">
+              SECURE_TOOL_CO // SYS.ONLINE
+            </span>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
+            We Solve the World&apos;s<br />
+            <span className="text-blue-400">Greatest Challenges</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-300 mb-4 font-light">
-            We solve the world&apos;s greatest challenges.
+
+          <p className="text-zinc-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-12">
+            Our tools and services use Next-Generation IoT (Internet of Things) technology
+            and devices to enable property managers, businesses, and homeowners to contribute
+            to the sustainable use of the World&apos;s most valuable resources.
           </p>
-          <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-            Our tools and services use Next-Generation IoT to deliver technical solutions
-            to water security and supply chain Cargo Control.
-          </p>
-        </div>
-        <div className="absolute bottom-10 z-10">
-          <div className="animate-bounce text-slate-400">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-8 w-8"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={1.5}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </div>
-        </div>
-      </section>
-      
-      {/* Companies Section */}
-      <section className="py-24 px-6" id="companies">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Our Companies
-            </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              SECURE Tool Company operates two specialized divisions focused on
-              critical infrastructure protection and monitoring.
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* SECURE Blue */}
+
+          <div className="flex flex-wrap gap-4">
             <a
               href="https://secureblue.earth"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block p-8 rounded-2xl border border-[#1e293b] bg-[#111827]/50 hover:border-[#3b82f6]/50 hover:bg-[#111827] transition-all duration-300"
+              className="px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white text-sm tracking-widest uppercase transition-colors"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#3b82f6] to-[#1e3a5f] flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-[#3b82f6] transition-colors">
-                    SECURE Blue
-                  </h3>
-                  <p className="text-sm text-[#3b82f6]">secureblue.earth</p>
-                </div>
-              </div>
-              <p className="text-slate-400 leading-relaxed">
-                Mission-critical water security solutions powered by next-generation
-                IoT technology. Protecting and monitoring water infrastructure
-                across municipalities, utilities, and industrial facilities.
-              </p>
+              SECURE Blue →
             </a>
-            {/* SECURE Cargo Control */}
             <a
               href="https://securecargo.tools"
               target="_blank"
               rel="noopener noreferrer"
-              className="group block p-8 rounded-2xl border border-[#1e293b] bg-[#111827]/50 hover:border-[#06b6d4]/50 hover:bg-[#111827] transition-all duration-300"
+              className="px-6 py-3 border border-zinc-600 hover:border-zinc-400 text-zinc-300 hover:text-white text-sm tracking-widest uppercase transition-colors"
             >
-              <div className="flex items-center gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#06b6d4] to-[#0e7490] flex items-center justify-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
-                    />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-[#06b6d4] transition-colors">
-                    SECURE Cargo Control
-                  </h3>
-                  <p className="text-sm text-[#06b6d4]">securecargo.tools</p>
-                </div>
-              </div>
-              <p className="text-slate-400 leading-relaxed">
-                Enterprise supply chain monitoring and cargo control systems.
-                Real-time tracking, condition monitoring, and security for
-                global logistics operations.
-              </p>
+              SECURE Cargo →
             </a>
           </div>
+
+          <div className="mt-20 grid grid-cols-3 gap-6 max-w-xl">
+            {[
+              { label: "WATER",     tag: "WaterTech" },
+              { label: "WORKFORCE", tag: "CargoControl" },
+              { label: "IOT",       tag: "IoT_Infrastructure" },
+            ].map((item) => (
+              <div key={item.label} className="border border-zinc-800 p-4">
+                <div className="text-xs text-zinc-600 tracking-widest mb-1">{item.tag}</div>
+                <div className="text-white text-sm font-bold tracking-widest">{item.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-40">
+          <span className="text-xs tracking-widest text-zinc-600">SCROLL</span>
+          <div className="w-px h-8 bg-zinc-700 animate-pulse" />
         </div>
       </section>
-      
-      {/* Founders Section */}
-      <section className="py-24 px-6 bg-[#111827]/30" id="founders">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Leadership
+
+      {/* ── COMPANIES ── */}
+      <section id="companies" className="py-24 border-t border-zinc-800/60">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-16">
+            <div className="text-xs tracking-[0.2em] text-zinc-600 mb-3 uppercase">
+              Portfolio // Active Companies
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+              Our Companies
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
-              The visionaries behind SECURE Tool Company.
-            </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {/* Adam-Paul Smolak */}
-            <div className="p-8 rounded-2xl border border-[#1e293b] bg-[#111827]/50 text-center">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#3b82f6] to-[#1e3a5f] flex items-center justify-center mx-auto mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+
+          {/* SECURE Blue */}
+          <div className="mb-12 border border-zinc-800 hover:border-zinc-600 transition-colors">
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="p-10 border-b md:border-b-0 md:border-r border-zinc-800">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="inline-block w-2 h-2 rounded-full bg-blue-400" />
+                  <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">NODE_01 // ACTIVE</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white tracking-tight mb-2">SECURE Blue</h3>
+                <div className="text-xs text-blue-400 tracking-widest mb-6">secureblue.earth</div>
+                <p className="text-zinc-400 leading-relaxed mb-8">
+                  An end-to-end autonomous water management ecosystem. SECURE Blue delivers
+                  next-generation IoT infrastructure combining live sensor telemetry, smart irrigation
+                  controls, leak detection, automated shut-off valves, and atmospheric water generation
+                  to reduce waste, protect assets, and improve water resilience.
+                </p>
+                <div className="grid grid-cols-2 gap-3 mb-8">
+                  {[
+                    "Autonomous leak detection",
+                    "Smart irrigation telemetry",
+                    "Atmospheric water generation",
+                    "LoRaWAN sensor networks",
+                    "Graywater recovery systems",
+                    "Remote infrastructure analytics",
+                  ].map((feat) => (
+                    <div key={feat} className="flex items-start gap-2">
+                      <span className="text-blue-400 text-xs mt-0.5">›</span>
+                      <span className="text-zinc-400 text-xs leading-relaxed">{feat}</span>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href="https://secureblue.earth"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs tracking-widest uppercase transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
+                  VISIT SECUREBLUE.EARTH →
+                </a>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Adam-Paul Smolak
-              </h3>
-              <p className="text-[#3b82f6] text-sm font-medium mb-4">
-                Co-Founder
-              </p>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Driving innovation in IoT-enabled water security and
-                infrastructure monitoring solutions.
-              </p>
+              <div className="p-10 bg-zinc-900/30">
+                <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">System Snapshot</div>
+                <div className="space-y-3 font-mono text-xs">
+                  {[
+                    { key: "SYS_STATUS",     val: "ONLINE",           color: "text-green-400" },
+                    { key: "ACTIVE_NODES",   val: "1,402",            color: "text-zinc-300"  },
+                    { key: "LEAK_ALERTS",    val: "0 ACTIVE",         color: "text-green-400" },
+                    { key: "A2W_YIELD_RATE", val: "482 L/HR",         color: "text-blue-400"  },
+                    { key: "LORAWAN_UPLINK", val: "STABLE",           color: "text-green-400" },
+                    { key: "SECTORS",        val: "Golf, Ag, HOA, CRE, Gov", color: "text-zinc-400" },
+                  ].map(({ key, val, color }) => (
+                    <div key={key} className="flex justify-between items-center border-b border-zinc-800/60 pb-2">
+                      <span className="text-zinc-600">{key}</span>
+                      <span className={color}>{val}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            {/* Scott Holbrook */}
-            <div className="p-8 rounded-2xl border border-[#1e293b] bg-[#111827]/50 text-center">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#06b6d4] to-[#0e7490] flex items-center justify-center mx-auto mb-6">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-10 w-10 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
+          </div>
+
+          {/* SECURE Cargo Control */}
+          <div className="border border-zinc-800 hover:border-zinc-600 transition-colors">
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="p-10 border-b md:border-b-0 md:border-r border-zinc-800">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="inline-block w-2 h-2 rounded-full bg-amber-400" />
+                  <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">NODE_02 // ACTIVE</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white tracking-tight mb-2">SECURE Cargo Control</h3>
+                <div className="text-xs text-amber-400 tracking-widest mb-6">securecargo.tools</div>
+                <p className="text-zinc-400 leading-relaxed mb-8">
+                  Inventors of the SuperRatchet and the AnyMount Cargo Control System. SECURE Cargo
+                  Control innovates next-generation tools to help workers in the world&apos;s most dangerous
+                  industries perform their jobs more efficiently and safely — whether hauling a weekend
+                  toy or suspending an I-beam 20 stories off the ground.
+                </p>
+                <div className="grid grid-cols-2 gap-3 mb-8">
+                  {[
+                    "SuperRatchet tie-down system",
+                    "AnyMount cargo system",
+                    "360Swivel D-Ring solutions",
+                    "DOT-C2 reflective safety tape",
+                    "Heavy-duty winch combos",
+                    "Industrial work safety gear",
+                  ].map((feat) => (
+                    <div key={feat} className="flex items-start gap-2">
+                      <span className="text-amber-400 text-xs mt-0.5">›</span>
+                      <span className="text-zinc-400 text-xs leading-relaxed">{feat}</span>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href="https://securecargo.tools"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white text-xs tracking-widest uppercase transition-colors"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={1.5}
-                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                  />
-                </svg>
+                  VISIT SECURECARGO.TOOLS →
+                </a>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">
-                Scott Holbrook
-              </h3>
-              <p className="text-[#06b6d4] text-sm font-medium mb-4">
-                Co-Founder
-              </p>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Leading the development of next-generation cargo control
-                and supply chain monitoring systems.
-              </p>
+              <div className="p-10 bg-zinc-900/30">
+                <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">Product Intel</div>
+                <div className="space-y-3 font-mono text-xs">
+                  {[
+                    { key: "FLAGSHIP",     val: "SuperRatchet System",   color: "text-zinc-300"  },
+                    { key: "PLATFORM",     val: "AnyMount CC System",    color: "text-zinc-300"  },
+                    { key: "INDUSTRIES",   val: "Construction, Transport", color: "text-zinc-400" },
+                    { key: "COMPLIANCE",   val: "DOT Certified",          color: "text-green-400" },
+                    { key: "DUTY_RATING",  val: "Heavy & Light",          color: "text-zinc-300"  },
+                    { key: "USE_CASES",    val: "Hauling, Lifting, Securing", color: "text-zinc-400" },
+                  ].map(({ key, val, color }) => (
+                    <div key={key} className="flex justify-between items-center border-b border-zinc-800/60 pb-2">
+                      <span className="text-zinc-600">{key}</span>
+                      <span className={color}>{val}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-            {/* Contact / Footer Section */}
-      <footer className="py-16 px-6 border-t border-[#1e293b]">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-slate-400 text-sm mb-4">
-            SECURE Tool Company
-          </p>
-          <p className="text-slate-500 text-xs">
-            Parent company of SECURE Blue and SECURE Cargo Control
-          </p>
-          <p className="text-slate-500 text-xs mt-2">
-            info@securetool.company
-          </p>
+
+      {/* ── FOUNDERS ── */}
+      <section id="founders" className="py-24 border-t border-zinc-800/60">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="mb-16">
+            <div className="text-xs tracking-[0.2em] text-zinc-600 mb-3 uppercase">
+              Leadership // Founding Team
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight">
+              The Founders
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Adam-Paul Smolak */}
+            <div className="border border-zinc-800 hover:border-zinc-600 transition-colors p-10">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="inline-block w-2 h-2 rounded-full bg-blue-400" />
+                <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">FOUNDER_01</span>
+              </div>
+              <div className="w-16 h-16 border border-zinc-700 bg-zinc-900 flex items-center justify-center mb-6">
+                <span className="text-2xl font-bold text-blue-400">AP</span>
+              </div>
+              <h3 className="text-xl font-bold text-white tracking-tight mb-1">Adam-Paul Smolak</h3>
+              <div className="text-xs text-blue-400 tracking-widest mb-6">CO-FOUNDER // SECURE TOOL CO.</div>
+              <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                Visionary entrepreneur and inventor at the intersection of physical tooling and
+                next-generation IoT infrastructure. Adam-Paul co-founded SECURE Tool Company
+                with a mission to build tools that address the most pressing challenges facing
+                the planet — from sustainable water management to safer industrial work environments.
+              </p>
+              <div className="space-y-2 font-mono text-xs">
+                {[
+                  { k: "ROLE",    v: "Co-Founder" },
+                  { k: "COMPANY", v: "SECURE Tool Co." },
+                  { k: "FOCUS",   v: "Product Strategy, IoT Vision" },
+                ].map(({ k, v }) => (
+                  <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
+                    <span className="text-zinc-600">{k}</span>
+                    <span className="text-zinc-300">{v}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Scott Holbrook */}
+            <div className="border border-zinc-800 hover:border-zinc-600 transition-colors p-10">
+              <div className="flex items-center gap-3 mb-8">
+                <span className="inline-block w-2 h-2 rounded-full bg-cyan-400" />
+                <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">FOUNDER_02</span>
+              </div>
+              <div className="w-16 h-16 border border-zinc-700 bg-zinc-900 flex items-center justify-center mb-6">
+                <span className="text-2xl font-bold text-cyan-400">SH</span>
+              </div>
+              <h3 className="text-xl font-bold text-white tracking-tight mb-1">Scott Holbrook</h3>
+              <div className="text-xs text-cyan-400 tracking-widest mb-6">CO-FOUNDER // SECURE TOOL CO.</div>
+              <p className="text-zinc-400 text-sm leading-relaxed mb-6">
+                Operations and systems leader driving execution across SECURE Tool Company&apos;s
+                growing portfolio. Scott brings deep experience building the infrastructure,
+                partnerships, and processes that allow bold ideas to scale from concept into
+                real-world deployment — across cargo control, water technology, and beyond.
+              </p>
+              <div className="space-y-2 font-mono text-xs">
+                {[
+                  { k: "ROLE",    v: "Co-Founder" },
+                  { k: "COMPANY", v: "SECURE Tool Co." },
+                  { k: "FOCUS",   v: "Operations, Partnerships, Scale" },
+                ].map(({ k, v }) => (
+                  <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
+                    <span className="text-zinc-600">{k}</span>
+                    <span className="text-zinc-300">{v}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOOTER ── */}
+      <footer className="border-t border-zinc-800/60 py-12">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div>
+            <div className="text-white font-bold text-sm tracking-[0.2em] uppercase mb-2">
+              SECURE TOOL COMPANY
+            </div>
+            <div className="text-zinc-600 text-xs">
+              Solving the world&apos;s greatest challenges through next-generation IoT tools and services.
+            </div>
+            <div className="text-zinc-700 text-xs mt-2">TUCSON, AZ // EST. 2025</div>
+          </div>
+          <div className="flex flex-col gap-3 text-xs">
+            <div className="flex gap-6 text-zinc-500">
+              <a href="https://secureblue.earth"   target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors tracking-widest uppercase">SECURE Blue</a>
+              <a href="https://securecargo.tools"  target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors tracking-widest uppercase">SECURE Cargo</a>
+              <a href="mailto:office@securetool.company" className="hover:text-zinc-300 transition-colors tracking-widest uppercase">Contact</a>
+            </div>
+            <div className="text-zinc-700 md:text-right">
+              © 2025–2026 SECURE TOOL COMPANY
+            </div>
+          </div>
         </div>
       </footer>
     </main>
