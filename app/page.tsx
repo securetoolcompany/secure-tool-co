@@ -246,22 +246,26 @@ export default function HomePage() {
                 <span className="inline-block w-2 h-2 rounded-full bg-blue-400" />
                 <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">FOUNDER_01</span>
               </div>
-              <div className="w-16 h-16 border border-zinc-700 bg-zinc-900 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-blue-400">AP</span>
-              </div>
+              <img
+                src="/adam-paul-smolak.jpg"
+                alt="Adam-Paul Smolak"
+                width={64}
+                height={64}
+                className="w-16 h-16 object-cover mb-6 grayscale hover:grayscale-0 transition-all"
+              />
               <h3 className="text-xl font-bold text-white tracking-tight mb-1">Adam-Paul Smolak</h3>
               <div className="text-xs text-blue-400 tracking-widest mb-6">CO-FOUNDER // SECURE TOOL CO.</div>
               <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                Visionary entrepreneur and inventor at the intersection of physical tooling and
-                next-generation IoT infrastructure. Adam-Paul co-founded SECURE Tool Company
-                with a mission to build tools that address the most pressing challenges facing
-                the planet — from sustainable water management to safer industrial work environments.
+                Visionary entrepreneur and company builder. Adam-Paul co-founded SECURE Tool Company
+                with a talent for identifying the right people, technologies, and strategies to tackle
+                the world&apos;s most pressing challenges — assembling the teams and partnerships that
+                turn bold ideas into operating businesses.
               </p>
               <div className="space-y-2 font-mono text-xs">
                 {[
-                  { k: "ROLE",    v: "Co-Founder" },
-                  { k: "COMPANY", v: "SECURE Tool Co." },
-                  { k: "FOCUS",   v: "Product Strategy, IoT Vision" },
+                  { k: "ROLE",    v: "Chairman & CEO" },
+                  { k: "COMPANY", v: "SECURE Tool Company" },
+                  { k: "FOCUS",   v: "Company Vision, Partnerships" },
                 ].map(({ k, v }) => (
                   <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
                     <span className="text-zinc-600">{k}</span>
@@ -277,22 +281,27 @@ export default function HomePage() {
                 <span className="inline-block w-2 h-2 rounded-full bg-cyan-400" />
                 <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">FOUNDER_02</span>
               </div>
-              <div className="w-16 h-16 border border-zinc-700 bg-zinc-900 flex items-center justify-center mb-6">
-                <span className="text-2xl font-bold text-cyan-400">SH</span>
-              </div>
+              <img
+                src="/scott-holbrook.jpg"
+                alt="Scott Holbrook"
+                width={64}
+                height={64}
+                className="w-16 h-16 object-cover mb-6 grayscale hover:grayscale-0 transition-all"
+              />
               <h3 className="text-xl font-bold text-white tracking-tight mb-1">Scott Holbrook</h3>
               <div className="text-xs text-cyan-400 tracking-widest mb-6">CO-FOUNDER // SECURE TOOL CO.</div>
               <p className="text-zinc-400 text-sm leading-relaxed mb-6">
-                Operations and systems leader driving execution across SECURE Tool Company&apos;s
-                growing portfolio. Scott brings deep experience building the infrastructure,
-                partnerships, and processes that allow bold ideas to scale from concept into
-                real-world deployment — across cargo control, water technology, and beyond.
+                Inventor and technical founder. Scott built the AnyMount Cargo Control System,
+                assembled the IoT infrastructure stack behind SECURE Blue and pioneers the
+                use of LoRaWAN networks for water management. He has a rare talent for turning 
+                real-world problems into 
+                scalable product lines.
               </p>
               <div className="space-y-2 font-mono text-xs">
                 {[
-                  { k: "ROLE",    v: "Co-Founder" },
-                  { k: "COMPANY", v: "SECURE Tool Co." },
-                  { k: "FOCUS",   v: "Operations, Partnerships, Scale" },
+                  { k: "ROLE",    v: "COO" },
+                  { k: "COMPANY", v: "SECURE Tool Company" },
+                  { k: "FOCUS",   v: "Operations, Sales, Product Engineering" },
                 ].map(({ k, v }) => (
                   <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
                     <span className="text-zinc-600">{k}</span>
