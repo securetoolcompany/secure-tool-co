@@ -1,6 +1,10 @@
 "use client";
 
+import { useState } from "react";
+
 export default function HomePage() {
+  const [cargoOpen, setCargoOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-[#0a0c10] text-zinc-300 font-mono">
 
@@ -20,7 +24,6 @@ export default function HomePage() {
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-14">
-        {/* Drop your hero image at /public/hero.jpg */}
         <div className="absolute inset-0 z-0">
           <img
             src="/hero.jpg"
@@ -61,14 +64,12 @@ export default function HomePage() {
             >
               SECURE Blue →
             </a>
-            <a
-              href="https://securecargo.tools"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 border border-zinc-600 hover:border-zinc-400 text-zinc-300 hover:text-white text-sm tracking-widest uppercase transition-colors"
+            <button
+              onClick={() => setCargoOpen(true)}
+              className="px-6 py-3 border border-zinc-600 hover:border-amber-700 text-zinc-300 hover:text-amber-300 text-sm tracking-widest uppercase transition-colors"
             >
               SECURE Cargo →
-            </a>
+            </button>
             <a
               href="https://metawork.tools"
               target="_blank"
@@ -79,7 +80,7 @@ export default function HomePage() {
             </a>
           </div>
 
-           <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
+          <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
             {[
               {
                 challenge: "WATER",
@@ -184,12 +185,12 @@ export default function HomePage() {
                 <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">System Snapshot</div>
                 <div className="space-y-3 font-mono text-xs">
                   {[
-                    { key: "SYS_STATUS",     val: "ONLINE",                color: "text-green-400" },
-                    { key: "ACTIVE_NODES",   val: "1,402",                 color: "text-zinc-300"  },
-                    { key: "LEAK_ALERTS",    val: "0 ACTIVE",              color: "text-green-400" },
-                    { key: "A2W_YIELD_RATE", val: "482 L/HR",              color: "text-blue-400"  },
-                    { key: "LORAWAN_UPLINK", val: "STABLE",                color: "text-green-400" },
-                    { key: "SECTORS",        val: "Golf, Ag, HOA, CRE, Gov", color: "text-zinc-400" },
+                    { key: "SYS_STATUS",     val: "ONLINE",                  color: "text-green-400" },
+                    { key: "ACTIVE_NODES",   val: "1,402",                   color: "text-zinc-300"  },
+                    { key: "LEAK_ALERTS",    val: "0 ACTIVE",                color: "text-green-400" },
+                    { key: "A2W_YIELD_RATE", val: "482 L/HR",                color: "text-blue-400"  },
+                    { key: "LORAWAN_UPLINK", val: "STABLE",                  color: "text-green-400" },
+                    { key: "SECTORS",        val: "Golf, Ag, HOA, CRE, Gov", color: "text-zinc-400"  },
                   ].map(({ key, val, color }) => (
                     <div key={key} className="flex justify-between items-center border-b border-zinc-800/60 pb-2">
                       <span className="text-zinc-600">{key}</span>
@@ -206,11 +207,11 @@ export default function HomePage() {
             <div className="grid md:grid-cols-2 gap-0">
               <div className="p-10 border-b md:border-b-0 md:border-r border-zinc-800">
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="inline-block w-2 h-2 rounded-full bg-amber-400" />
-                  <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">NODE_02 // ACTIVE</span>
+                  <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+                  <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">NODE_02 // BUILDING</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white tracking-tight mb-2">SECURE Cargo Control</h3>
-                <div className="text-xs text-amber-400 tracking-widests mb-6">securecargo.tools</div>
+                <div className="text-xs text-amber-400 tracking-widest mb-6">securecargo.tools</div>
                 <p className="text-zinc-400 leading-relaxed mb-8">
                   Inventors of the SuperRatchet and the AnyMount Cargo Control System. SECURE Cargo
                   Control innovates next-generation tools to help workers in the world&apos;s most dangerous
@@ -232,25 +233,23 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
-                <a
-                  href="https://securecargo.tools"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => setCargoOpen(true)}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white text-xs tracking-widest uppercase transition-colors"
                 >
                   VISIT SECURECARGO.TOOLS →
-                </a>
+                </button>
               </div>
               <div className="p-10 bg-zinc-900/30">
                 <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">Product Intel</div>
                 <div className="space-y-3 font-mono text-xs">
                   {[
-                    { key: "FLAGSHIP",     val: "SuperRatchet System",      color: "text-zinc-300"  },
-                    { key: "PLATFORM",     val: "AnyMount CC System",       color: "text-zinc-300"  },
-                    { key: "INDUSTRIES",   val: "Construction, Transport",   color: "text-zinc-400"  },
-                    { key: "COMPLIANCE",   val: "DOT Certified",             color: "text-green-400" },
-                    { key: "DUTY_RATING",  val: "Heavy & Light",             color: "text-zinc-300"  },
-                    { key: "USE_CASES",    val: "Hauling, Lifting, Securing", color: "text-zinc-400" },
+                    { key: "FLAGSHIP",    val: "SuperRatchet System",       color: "text-zinc-300"  },
+                    { key: "PLATFORM",    val: "AnyMount CC System",        color: "text-zinc-300"  },
+                    { key: "INDUSTRIES",  val: "Construction, Transport",    color: "text-zinc-400"  },
+                    { key: "COMPLIANCE",  val: "DOT Certified",              color: "text-green-400" },
+                    { key: "DUTY_RATING", val: "Heavy & Light",              color: "text-zinc-300"  },
+                    { key: "USE_CASES",   val: "Hauling, Lifting, Securing", color: "text-zinc-400"  },
                   ].map(({ key, val, color }) => (
                     <div key={key} className="flex justify-between items-center border-b border-zinc-800/60 pb-2">
                       <span className="text-zinc-600">{key}</span>
@@ -306,12 +305,12 @@ export default function HomePage() {
                 <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">Platform Stats</div>
                 <div className="space-y-3 font-mono text-xs">
                   {[
-                    { key: "SYS_STATUS",    val: "ONLINE",                color: "text-green-400"  },
-                    { key: "BLOCKCHAIN",    val: "Algorand",              color: "text-purple-400" },
-                    { key: "FULFILLMENT",   val: "Global Mfg. Network",   color: "text-zinc-300"   },
-                    { key: "STOREFRONT",    val: "Custom Aisle",          color: "text-zinc-300"   },
-                    { key: "PRODUCT_TYPES", val: "Merch, IP, Autheticated Docs",  color: "text-zinc-400"   },
-                    { key: "ROYALTY_MODEL", val: "Per-Use IP Licensing",  color: "text-purple-400" },
+                    { key: "SYS_STATUS",    val: "ONLINE",                       color: "text-green-400"  },
+                    { key: "BLOCKCHAIN",    val: "Algorand",                     color: "text-purple-400" },
+                    { key: "FULFILLMENT",   val: "Global Mfg. Network",          color: "text-zinc-300"   },
+                    { key: "STOREFRONT",    val: "Custom Aisle",                 color: "text-zinc-300"   },
+                    { key: "PRODUCT_TYPES", val: "Merch, IP, Authenticated Docs", color: "text-zinc-400"  },
+                    { key: "ROYALTY_MODEL", val: "Per-Use IP Licensing",         color: "text-purple-400" },
                   ].map(({ key, val, color }) => (
                     <div key={key} className="flex justify-between items-center border-b border-zinc-800/60 pb-2">
                       <span className="text-zinc-600">{key}</span>
@@ -362,16 +361,26 @@ export default function HomePage() {
               </p>
               <div className="space-y-2 font-mono text-xs">
                 {[
-                  { k: "ROLE",    v: "Chairman & CEO" },
-                  { k: "COMPANY", v: "SECURE Tool Company" },
-                  { k: "FOCUS",   v: "Company Vision, Partnerships" },
-                  { k: "LINKEDIN", v: <a href="https://www.linkedin.com/in/adam-paul-smolak-4b816312/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 transition-colors">linkedin.com/in/adam-paul-smolak</a> },
+                  { k: "ROLE",     v: "Chairman & CEO" },
+                  { k: "COMPANY",  v: "SECURE Tool Company" },
+                  { k: "FOCUS",    v: "Company Vision, Partnerships" },
                 ].map(({ k, v }) => (
                   <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
                     <span className="text-zinc-600">{k}</span>
                     <span className="text-zinc-300">{v}</span>
                   </div>
                 ))}
+                <div className="flex justify-between border-b border-zinc-800/60 pb-2">
+                  <span className="text-zinc-600">LINKEDIN</span>
+                  <a
+                    href="https://www.linkedin.com/in/adam-paul-smolak-4b816312/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 transition-colors"
+                  >
+                    /in/adam-paul-smolak
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -401,13 +410,23 @@ export default function HomePage() {
                   { k: "ROLE",    v: "COO" },
                   { k: "COMPANY", v: "SECURE Tool Company" },
                   { k: "FOCUS",   v: "Operations, Sales, Product Engineering" },
-                  { k: "LINKEDIN", v: <a href="https://www.linkedin.com/in/imscottholbrook/" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:text-cyan-300 transition-colors">linkedin.com/in/imscottholbrook</a> },
                 ].map(({ k, v }) => (
                   <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
                     <span className="text-zinc-600">{k}</span>
                     <span className="text-zinc-300">{v}</span>
                   </div>
                 ))}
+                <div className="flex justify-between border-b border-zinc-800/60 pb-2">
+                  <span className="text-zinc-600">LINKEDIN</span>
+                  <a
+                    href="https://www.linkedin.com/in/imscottholbrook/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    /in/imscottholbrook
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -428,9 +447,9 @@ export default function HomePage() {
           </div>
           <div className="flex flex-col gap-3 text-xs">
             <div className="flex flex-wrap gap-6 text-zinc-500">
-              <a href="https://secureblue.earth"  target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors tracking-widest uppercase">SECURE Blue</a>
-              <a href="https://securecargo.tools" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors tracking-widest uppercase">SECURE Cargo</a>
-              <a href="https://metawork.tools"    target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors tracking-widest uppercase">MetaWork</a>
+              <a href="https://secureblue.earth" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors tracking-widest uppercase">SECURE Blue</a>
+              <button onClick={() => setCargoOpen(true)} className="hover:text-amber-400 transition-colors tracking-widest uppercase">SECURE Cargo</button>
+              <a href="https://metawork.tools" target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors tracking-widest uppercase">MetaWork</a>
               <a href="mailto:office@securetool.company" className="hover:text-zinc-300 transition-colors tracking-widest uppercase">Contact</a>
             </div>
             <div className="text-zinc-700 md:text-right">
@@ -439,6 +458,65 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* ── SECURE CARGO PLACEHOLDER MODAL ── */}
+      {cargoOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-6"
+          onClick={() => setCargoOpen(false)}
+        >
+          <div className="absolute inset-0 bg-black/70 backdrop-blur-sm" />
+          <div
+            className="relative z-10 border border-amber-800/60 bg-[#0a0c10] p-10 max-w-md w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setCargoOpen(false)}
+              className="absolute top-4 right-4 text-zinc-600 hover:text-zinc-300 transition-colors text-xs tracking-widest"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+            <div className="flex items-center gap-3 mb-6">
+              <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+              <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">NODE_02 // COMING SOON</span>
+            </div>
+            <h3 className="text-2xl font-bold text-white tracking-tight mb-2">SECURE Cargo Control</h3>
+            <div className="text-xs text-amber-400 tracking-widest mb-6">securecargo.tools</div>
+            <p className="text-zinc-400 text-sm leading-relaxed mb-8">
+              The SECURE Cargo Control site is under construction. Check back soon for the
+              full SuperRatchet and AnyMount product lineup.
+            </p>
+            <div className="space-y-2 font-mono text-xs mb-8">
+              {[
+                { key: "STATUS",  val: "BUILDING",                  color: "text-amber-400" },
+                { key: "ETA",     val: "COMING SOON",               color: "text-zinc-300"  },
+                { key: "CONTACT", val: "office@securetool.company", color: "text-zinc-400"  },
+              ].map(({ key, val, color }) => (
+                <div key={key} className="flex justify-between items-center border-b border-zinc-800/60 pb-2">
+                  <span className="text-zinc-600">{key}</span>
+                  <span className={color}>{val}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-3">
+              <a
+                href="mailto:office@securetool.company"
+                className="px-5 py-2.5 bg-amber-600 hover:bg-amber-500 text-white text-xs tracking-widest uppercase transition-colors"
+              >
+                GET IN TOUCH →
+              </a>
+              <button
+                onClick={() => setCargoOpen(false)}
+                className="px-5 py-2.5 border border-zinc-700 hover:border-zinc-500 text-zinc-400 hover:text-zinc-200 text-xs tracking-widest uppercase transition-colors"
+              >
+                CLOSE
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
     </main>
   );
 }
