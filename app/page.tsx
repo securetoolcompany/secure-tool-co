@@ -69,17 +69,54 @@ export default function HomePage() {
             >
               SECURE Cargo →
             </a>
+            <a
+              href="https://metawork.tools"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 border border-zinc-600 hover:border-purple-500 text-zinc-300 hover:text-purple-300 text-sm tracking-widest uppercase transition-colors"
+            >
+              MetaWork →
+            </a>
           </div>
 
-          <div className="mt-20 grid grid-cols-3 gap-6 max-w-xl">
+           <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
             {[
-              { label: "WATER",     tag: "WaterTech" },
-              { label: "WORKFORCE", tag: "CargoControl" },
-              { label: "IOT",       tag: "IoT_Infrastructure" },
+              {
+                challenge: "WATER",
+                mission:   "We make every drop accountable.",
+                company:   "SECURE Blue",
+                color:     "text-blue-400",
+                dot:       "bg-blue-400",
+                border:    "hover:border-blue-900",
+              },
+              {
+                challenge: "SAFETY",
+                mission:   "We bring workers home.",
+                company:   "SECURE Cargo",
+                color:     "text-amber-400",
+                dot:       "bg-amber-400",
+                border:    "hover:border-amber-900",
+              },
+              {
+                challenge: "COMMERCE",
+                mission:   "Economic tools for everyone.",
+                company:   "MetaWork",
+                color:     "text-purple-400",
+                dot:       "bg-purple-400",
+                border:    "hover:border-purple-900",
+              },
             ].map((item) => (
-              <div key={item.label} className="border border-zinc-800 p-4">
-                <div className="text-xs text-zinc-600 tracking-widest mb-1">{item.tag}</div>
-                <div className="text-white text-sm font-bold tracking-widest">{item.label}</div>
+              <div key={item.challenge} className={`border border-zinc-800 ${item.border} transition-colors p-5`}>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className={`inline-block w-1.5 h-1.5 rounded-full ${item.dot}`} />
+                  <span className={`text-xs tracking-[0.15em] uppercase ${item.color}`}>{item.company}</span>
+                </div>
+                <div className="text-white text-base font-bold tracking-widest uppercase mb-2">
+                  {item.challenge}
+                </div>
+                <div className="text-zinc-500 text-xs leading-relaxed italic">
+                  {item.mission}
+                </div>
               </div>
             ))}
           </div>
@@ -147,11 +184,11 @@ export default function HomePage() {
                 <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">System Snapshot</div>
                 <div className="space-y-3 font-mono text-xs">
                   {[
-                    { key: "SYS_STATUS",     val: "ONLINE",           color: "text-green-400" },
-                    { key: "ACTIVE_NODES",   val: "1,402",            color: "text-zinc-300"  },
-                    { key: "LEAK_ALERTS",    val: "0 ACTIVE",         color: "text-green-400" },
-                    { key: "A2W_YIELD_RATE", val: "482 L/HR",         color: "text-blue-400"  },
-                    { key: "LORAWAN_UPLINK", val: "STABLE",           color: "text-green-400" },
+                    { key: "SYS_STATUS",     val: "ONLINE",                color: "text-green-400" },
+                    { key: "ACTIVE_NODES",   val: "1,402",                 color: "text-zinc-300"  },
+                    { key: "LEAK_ALERTS",    val: "0 ACTIVE",              color: "text-green-400" },
+                    { key: "A2W_YIELD_RATE", val: "482 L/HR",              color: "text-blue-400"  },
+                    { key: "LORAWAN_UPLINK", val: "STABLE",                color: "text-green-400" },
                     { key: "SECTORS",        val: "Golf, Ag, HOA, CRE, Gov", color: "text-zinc-400" },
                   ].map(({ key, val, color }) => (
                     <div key={key} className="flex justify-between items-center border-b border-zinc-800/60 pb-2">
@@ -165,7 +202,7 @@ export default function HomePage() {
           </div>
 
           {/* SECURE Cargo Control */}
-          <div className="border border-zinc-800 hover:border-zinc-600 transition-colors">
+          <div className="mb-12 border border-zinc-800 hover:border-zinc-600 transition-colors">
             <div className="grid md:grid-cols-2 gap-0">
               <div className="p-10 border-b md:border-b-0 md:border-r border-zinc-800">
                 <div className="flex items-center gap-3 mb-6">
@@ -173,7 +210,7 @@ export default function HomePage() {
                   <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">NODE_02 // ACTIVE</span>
                 </div>
                 <h3 className="text-2xl font-bold text-white tracking-tight mb-2">SECURE Cargo Control</h3>
-                <div className="text-xs text-amber-400 tracking-widest mb-6">securecargo.tools</div>
+                <div className="text-xs text-amber-400 tracking-widests mb-6">securecargo.tools</div>
                 <p className="text-zinc-400 leading-relaxed mb-8">
                   Inventors of the SuperRatchet and the AnyMount Cargo Control System. SECURE Cargo
                   Control innovates next-generation tools to help workers in the world&apos;s most dangerous
@@ -208,11 +245,11 @@ export default function HomePage() {
                 <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">Product Intel</div>
                 <div className="space-y-3 font-mono text-xs">
                   {[
-                    { key: "FLAGSHIP",     val: "SuperRatchet System",   color: "text-zinc-300"  },
-                    { key: "PLATFORM",     val: "AnyMount CC System",    color: "text-zinc-300"  },
-                    { key: "INDUSTRIES",   val: "Construction, Transport", color: "text-zinc-400" },
-                    { key: "COMPLIANCE",   val: "DOT Certified",          color: "text-green-400" },
-                    { key: "DUTY_RATING",  val: "Heavy & Light",          color: "text-zinc-300"  },
+                    { key: "FLAGSHIP",     val: "SuperRatchet System",      color: "text-zinc-300"  },
+                    { key: "PLATFORM",     val: "AnyMount CC System",       color: "text-zinc-300"  },
+                    { key: "INDUSTRIES",   val: "Construction, Transport",   color: "text-zinc-400"  },
+                    { key: "COMPLIANCE",   val: "DOT Certified",             color: "text-green-400" },
+                    { key: "DUTY_RATING",  val: "Heavy & Light",             color: "text-zinc-300"  },
                     { key: "USE_CASES",    val: "Hauling, Lifting, Securing", color: "text-zinc-400" },
                   ].map(({ key, val, color }) => (
                     <div key={key} className="flex justify-between items-center border-b border-zinc-800/60 pb-2">
@@ -224,6 +261,68 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+          {/* MetaWork */}
+          <div className="border border-zinc-800 hover:border-zinc-600 transition-colors">
+            <div className="grid md:grid-cols-2 gap-0">
+              <div className="p-10 border-b md:border-b-0 md:border-r border-zinc-800">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="inline-block w-2 h-2 rounded-full bg-purple-400" />
+                  <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">NODE_03 // ACTIVE</span>
+                </div>
+                <h3 className="text-2xl font-bold text-white tracking-tight mb-2">MetaWork</h3>
+                <div className="text-xs text-purple-400 tracking-widest mb-6">metawork.tools</div>
+                <p className="text-zinc-400 leading-relaxed mb-8">
+                  A Web3 creator platform where artists, designers, and entrepreneurs upload their
+                  intellectual property, design custom products, and earn royalties through on-chain
+                  ownership. MetaWork connects creators to print-on-demand fulfillment and e-commerce
+                  — turning original IP into a scalable passive income stream.
+                </p>
+                <div className="grid grid-cols-2 gap-3 mb-8">
+                  {[
+                    "IP upload & on-chain ownership",
+                    "Custom product design canvas",
+                    "Algorand blockchain royalties",
+                    "Print-on-demand fulfillment",
+                    "Creator earnings dashboard",
+                    "Customized Aisles to display Products/IP",
+                  ].map((feat) => (
+                    <div key={feat} className="flex items-start gap-2">
+                      <span className="text-purple-400 text-xs mt-0.5">›</span>
+                      <span className="text-zinc-400 text-xs leading-relaxed">{feat}</span>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href="https://metawork.tools"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-purple-700 hover:bg-purple-600 text-white text-xs tracking-widest uppercase transition-colors"
+                >
+                  VISIT METAWORK.TOOLS →
+                </a>
+              </div>
+              <div className="p-10 bg-zinc-900/30">
+                <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">Platform Stats</div>
+                <div className="space-y-3 font-mono text-xs">
+                  {[
+                    { key: "SYS_STATUS",    val: "ONLINE",                color: "text-green-400"  },
+                    { key: "BLOCKCHAIN",    val: "Algorand",              color: "text-purple-400" },
+                    { key: "FULFILLMENT",   val: "Global Mfg. Network",   color: "text-zinc-300"   },
+                    { key: "STOREFRONT",    val: "Custom Aisle",          color: "text-zinc-300"   },
+                    { key: "PRODUCT_TYPES", val: "Merch, IP, Autheticated Docs",  color: "text-zinc-400"   },
+                    { key: "ROYALTY_MODEL", val: "Per-Use IP Licensing",  color: "text-purple-400" },
+                  ].map(({ key, val, color }) => (
+                    <div key={key} className="flex justify-between items-center border-b border-zinc-800/60 pb-2">
+                      <span className="text-zinc-600">{key}</span>
+                      <span className={color}>{val}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -270,7 +369,7 @@ export default function HomePage() {
                 ].map(({ k, v }) => (
                   <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
                     <span className="text-zinc-600">{k}</span>
-                    <span className="text-zinc-300 text-right">{v}</span>
+                    <span className="text-zinc-300">{v}</span>
                   </div>
                 ))}
               </div>
@@ -293,9 +392,9 @@ export default function HomePage() {
               <div className="text-xs text-cyan-400 tracking-widest mb-6">CO-FOUNDER // SECURE TOOL CO.</div>
               <p className="text-zinc-400 text-sm leading-relaxed mb-6">
                 Inventor and technical founder. Scott built the AnyMount Cargo Control System,
-                assembled the IoT infrastructure stack behind SECURE Blue and pioneers the
-                use of LoRaWAN networks for water management. He has a rare talent for turning 
-                client pains and real-world problems into scalable product lines.
+                assembled the IoT infrastructure stack behind SECURE Blue, and pioneers the
+                use of LoRaWAN networks for water management. He has a rare talent for turning
+                real-world problems into scalable product lines.
               </p>
               <div className="space-y-2 font-mono text-xs">
                 {[
@@ -306,7 +405,7 @@ export default function HomePage() {
                 ].map(({ k, v }) => (
                   <div key={k} className="flex justify-between border-b border-zinc-800/60 pb-2">
                     <span className="text-zinc-600">{k}</span>
-                    <span className="text-zinc-300 text-right">{v}</span>
+                    <span className="text-zinc-300">{v}</span>
                   </div>
                 ))}
               </div>
@@ -328,9 +427,10 @@ export default function HomePage() {
             <div className="text-zinc-700 text-xs mt-2">TUCSON, AZ // EST. 2025</div>
           </div>
           <div className="flex flex-col gap-3 text-xs">
-            <div className="flex gap-6 text-zinc-500">
-              <a href="https://secureblue.earth"   target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors tracking-widest uppercase">SECURE Blue</a>
-              <a href="https://securecargo.tools"  target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors tracking-widest uppercase">SECURE Cargo</a>
+            <div className="flex flex-wrap gap-6 text-zinc-500">
+              <a href="https://secureblue.earth"  target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors tracking-widest uppercase">SECURE Blue</a>
+              <a href="https://securecargo.tools" target="_blank" rel="noopener noreferrer" className="hover:text-amber-400 transition-colors tracking-widest uppercase">SECURE Cargo</a>
+              <a href="https://metawork.tools"    target="_blank" rel="noopener noreferrer" className="hover:text-purple-400 transition-colors tracking-widest uppercase">MetaWork</a>
               <a href="mailto:office@securetool.company" className="hover:text-zinc-300 transition-colors tracking-widest uppercase">Contact</a>
             </div>
             <div className="text-zinc-700 md:text-right">
