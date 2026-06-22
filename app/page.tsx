@@ -9,27 +9,24 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#0a0c10] text-zinc-300 font-mono">
       {/* ── NAV ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0c10]/90 backdrop-blur-sm">
-        <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14">
-          <span className="text-white text-sm font-bold tracking-[0.2em] uppercase">
-            SECURE TOOL COMPANY
-          </span>
-          <div className="flex items-center gap-6 text-xs tracking-widest text-zinc-500">
-            <a href="#companies" className="hover:text-zinc-200 transition-colors">
-              COMPANIES
-            </a>
-            <a href="#founders" className="hover:text-zinc-200 transition-colors">
-              FOUNDERS
-            </a>
-            <a
-              href="mailto:office@securetool.company"
-              className="hover:text-zinc-200 transition-colors"
-            >
-              CONTACT
-            </a>
-          </div>
-        </div>
-      </nav>
+<nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0c10]/90 backdrop-blur-sm">
+  <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14">
+    <a href="#" aria-label="SECURE Tool Company home">
+      <img
+        src="/secure_tool_logo2.png"
+        alt="SECURE Tool Company"
+        width={160}
+        height={36}
+        className="h-9 w-auto object-contain"
+      />
+    </a>
+    <div className="flex items-center gap-6 text-xs tracking-widest text-zinc-500">
+      <a href="#companies" className="hover:text-zinc-200 transition-colors">COMPANIES</a>
+      <a href="#founders"  className="hover:text-zinc-200 transition-colors">FOUNDERS</a>
+      <a href="mailto:office@securetool.company" className="hover:text-zinc-200 transition-colors">CONTACT</a>
+    </div>
+  </div>
+</nav>
 
       {/* ── HERO ── */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-14">
