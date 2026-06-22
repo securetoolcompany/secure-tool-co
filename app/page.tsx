@@ -12,7 +12,7 @@ export default function HomePage() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-zinc-800/60 bg-[#0a0c10]/90 backdrop-blur-sm">
         <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-14">
           <span className="text-white text-sm font-bold tracking-[0.2em] uppercase">
-            SECURE TOOL CO.
+            SECURE TOOL COMPANY
           </span>
           <div className="flex items-center gap-6 text-xs tracking-widest text-zinc-500">
             <a href="#companies" className="hover:text-zinc-200 transition-colors">COMPANIES</a>
