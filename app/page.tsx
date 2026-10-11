@@ -764,11 +764,11 @@ export default function HomePage() {
               SECURE TOOL COMPANY
             </div>
             <div className="text-zinc-600 text-xs">
-              Solving the world&apos;s greatest challenges through
-              next-generation IoT tools and services.
+              Solving the world&apos;s greatest challenges with
+              innovative, next-generation tools and technology.
             </div>
             <div className="text-zinc-700 text-xs mt-2">
-              TUCSON, AZ // EST. 2025
+              TUCSON, AZ // EST. 2014
             </div>
           </div>
           <div className="flex flex-col gap-3 text-xs">
@@ -809,7 +809,7 @@ export default function HomePage() {
               </a>
             </div>
             <div className="text-zinc-700 md:text-right">
-              © 2025–2026 SECURE TOOL COMPANY
+              © 2014–2026 SECURE TOOL COMPANY
             </div>
           </div>
         </div>
