@@ -237,12 +237,15 @@ export default function HomePage() {
                     NODE_01 // ACTIVE
                   </span>
                 </div>
+
                 <h3 className="text-2xl font-bold text-white tracking-tight mb-2">
                   SECURE Blue
                 </h3>
+
                 <div className="text-xs text-blue-400 tracking-widest mb-6">
                   secureblue.earth
                 </div>
+
                 <p className="text-zinc-400 leading-relaxed mb-8">
                   SECURE Blue consults with governments and private entities to assess
                   their sites and identify the most cost-effective ways to recover,
@@ -253,6 +256,7 @@ export default function HomePage() {
                   into water nodes—capturing local resources and putting them
                   back to work where they&apos;re needed.
                 </p>
+
                 <div className="grid grid-cols-2 gap-3 mb-8">
                   {[
                     "Government & private-sector consulting",
@@ -270,6 +274,7 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
+
                 <a
                   href="https://secureblue.earth"
                   target="_blank"
@@ -279,10 +284,12 @@ export default function HomePage() {
                   VISIT SECUREBLUE.EARTH →
                 </a>
               </div>
+
               <div className="p-10 bg-zinc-900/30">
                 <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">
                   Our Approach
                 </div>
+
                 <div className="space-y-3 font-mono text-xs">
                   {[
                     {
@@ -318,10 +325,10 @@ export default function HomePage() {
                   ].map(({ key, val, color }) => (
                     <div
                       key={key}
-                      className="flex justify-between items-center border-b border-zinc-800/60 pb-2"
+                      className="flex justify-between items-start gap-4 border-b border-zinc-800/60 pb-2"
                     >
-                      <span className="text-zinc-600">{key}</span>
-                      <span className={color}>{val}</span>
+                      <span className="text-zinc-600 shrink-0">{key}</span>
+                      <span className={`${color} text-right`}>{val}</span>
                     </div>
                   ))}
                 </div>
@@ -339,12 +346,15 @@ export default function HomePage() {
                     NODE_02 // ACTIVE
                   </span>
                 </div>
+
                 <h3 className="text-2xl font-bold text-white tracking-tight mb-2">
                   MetaWork
                 </h3>
+
                 <div className="text-xs text-purple-400 tracking-widest mb-6">
                   metawork.tools
                 </div>
+
                 <p className="text-zinc-400 leading-relaxed mb-8">
                   MetaWork is a real-world asset (RWA) tokenization platform—the home
                   of tokenized revenue streams. We help creators launch businesses
@@ -356,13 +366,14 @@ export default function HomePage() {
                   raising capital with people who want to invest in their
                   communities and share in the value they help create.
                 </p>
+
                 <div className="grid grid-cols-2 gap-3 mb-8">
                   {[
                     "Real-world asset (RWA) tokenization",
                     "Smart contracts & tokenized business deals",
                     "Community investment & fractional participation",
                     "Creator business & product-launch tools",
-                    "Aisles (custom storefront) & Product fulfillment",
+                    "Aisles (custom storefronts) & product fulfillment",
                     "IP licensing, royalties & revenue sharing",
                   ].map((feat) => (
                     <div key={feat} className="flex items-start gap-2">
@@ -373,6 +384,7 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
+
                 <a
                   href="https://metawork.tools"
                   target="_blank"
@@ -382,10 +394,12 @@ export default function HomePage() {
                   VISIT METAWORK.TOOLS →
                 </a>
               </div>
+
               <div className="p-10 bg-zinc-900/30">
                 <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">
                   Platform Overview
                 </div>
+
                 <div className="space-y-3 font-mono text-xs">
                   {[
                     {
@@ -421,10 +435,10 @@ export default function HomePage() {
                   ].map(({ key, val, color }) => (
                     <div
                       key={key}
-                      className="flex justify-between items-center border-b border-zinc-800/60 pb-2"
+                      className="flex justify-between items-start gap-4 border-b border-zinc-800/60 pb-2"
                     >
-                      <span className="text-zinc-600">{key}</span>
-                      <span className={color}>{val}</span>
+                      <span className="text-zinc-600 shrink-0">{key}</span>
+                      <span className={`${color} text-right`}>{val}</span>
                     </div>
                   ))}
                 </div>
@@ -433,21 +447,24 @@ export default function HomePage() {
           </div>
 
           {/* ── NODE_03: SECURE DePIN ── */}
-          <div className="border border-zinc-800 hover:border-zinc-600 transition-colors">
+          <div className="mb-12 border border-zinc-800 hover:border-zinc-600 transition-colors">
             <div className="grid md:grid-cols-2 gap-0">
               <div className="p-10 border-b md:border-b-0 md:border-r border-zinc-800">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="inline-block w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
                   <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">
-                    NODE_04 // BUILDING
+                    NODE_03 // BUILDING
                   </span>
                 </div>
+
                 <h3 className="text-2xl font-bold text-white tracking-tight mb-2">
                   SECURE DePIN
                 </h3>
+
                 <div className="text-xs text-teal-400 tracking-widest mb-6">
                   securedepin.io
                 </div>
+
                 <p className="text-zinc-400 leading-relaxed mb-8">
                   SECURE DePIN deploys and operates decentralized physical
                   infrastructure—the nodes, computing resources, wireless networks,
@@ -456,6 +473,7 @@ export default function HomePage() {
                   monitoring, and maintenance, with a focus on reliable connectivity
                   and dependable day-to-day operations.
                 </p>
+
                 <div className="grid grid-cols-2 gap-3 mb-8">
                   {[
                     "Blockchain node hosting & operations",
@@ -467,21 +485,27 @@ export default function HomePage() {
                   ].map((feat) => (
                     <div key={feat} className="flex items-start gap-2">
                       <span className="text-teal-400 text-xs mt-0.5">›</span>
-                      <span className="text-zinc-400 text-xs leading-relaxed">{feat}</span>
+                      <span className="text-zinc-400 text-xs leading-relaxed">
+                        {feat}
+                      </span>
                     </div>
                   ))}
                 </div>
+
                 <button
+                  type="button"
                   onClick={() => setDepinOpen(true)}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-teal-700 hover:bg-teal-600 text-white text-xs tracking-widest uppercase transition-colors"
                 >
                   LEARN MORE →
                 </button>
               </div>
+
               <div className="p-10 bg-zinc-900/30">
                 <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">
                   Network Intel
                 </div>
+
                 <div className="space-y-3 font-mono text-xs">
                   {[
                     {
@@ -517,35 +541,36 @@ export default function HomePage() {
                   ].map(({ key, val, color }) => (
                     <div
                       key={key}
-                      className="flex justify-between items-center border-b border-zinc-800/60 pb-2"
+                      className="flex justify-between items-start gap-4 border-b border-zinc-800/60 pb-2"
                     >
-                      <span className="text-zinc-600">{key}</span>
-                      <span className={color}>{val}</span>
+                      <span className="text-zinc-600 shrink-0">{key}</span>
+                      <span className={`${color} text-right`}>{val}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-          
+
           {/* ── NODE_04: SECURE Cargo Control ── */}
-          <div className="mb-12 border border-zinc-800 hover:border-zinc-600 transition-colors">
+          <div className="border border-zinc-800 hover:border-zinc-600 transition-colors">
             <div className="grid md:grid-cols-2 gap-0">
               <div className="p-10 border-b md:border-b-0 md:border-r border-zinc-800">
                 <div className="flex items-center gap-3 mb-6">
                   <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                   <span className="text-xs tracking-[0.2em] text-zinc-500 uppercase">
-                    NODE_03 // BUILDING
+                    NODE_04 // BUILDING
                   </span>
                 </div>
+
                 <h3 className="text-2xl font-bold text-white tracking-tight mb-2">
                   SECURE Cargo Control
                 </h3>
+
                 <div className="text-xs text-amber-400 tracking-widest mb-6">
                   securecargo.tools
                 </div>
+
                 <p className="text-zinc-400 leading-relaxed mb-8">
                   AnyWinch gives you the freedom to position cargo tie-downs around
                   your load instead of working around fixed mounting points.
@@ -554,6 +579,7 @@ export default function HomePage() {
                   swivel head lets you orient the strap as needed, while the
                   clamp holds the mount in place without tools or welding.
                 </p>
+
                 <div className="grid grid-cols-2 gap-3 mb-8">
                   {[
                     "Portable clamp-on strap winch",
@@ -571,17 +597,21 @@ export default function HomePage() {
                     </div>
                   ))}
                 </div>
+
                 <button
+                  type="button"
                   onClick={() => setCargoOpen(true)}
                   className="inline-flex items-center gap-2 px-6 py-3 bg-amber-600 hover:bg-amber-500 text-white text-xs tracking-widest uppercase transition-colors"
                 >
-                  VISIT SECURECARGO.TOOLS →
+                  LEARN MORE →
                 </button>
               </div>
+
               <div className="p-10 bg-zinc-900/30">
                 <div className="text-xs tracking-widest text-zinc-600 mb-6 uppercase">
                   Product Intel
                 </div>
+
                 <div className="space-y-3 font-mono text-xs">
                   {[
                     {
@@ -617,16 +647,18 @@ export default function HomePage() {
                   ].map(({ key, val, color }) => (
                     <div
                       key={key}
-                      className="flex justify-between items-center border-b border-zinc-800/60 pb-2"
+                      className="flex justify-between items-start gap-4 border-b border-zinc-800/60 pb-2"
                     >
-                      <span className="text-zinc-600">{key}</span>
-                      <span className={color}>{val}</span>
+                      <span className="text-zinc-600 shrink-0">{key}</span>
+                      <span className={`${color} text-right`}>{val}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
           </div>
+          </div>
+          </section>
 
       {/* ── FOUNDERS ── */}
       <section id="founders" className="py-24 border-t border-zinc-800/60">
